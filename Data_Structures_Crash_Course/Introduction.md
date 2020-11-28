@@ -1,0 +1,4 @@
+- coding interviews -> access interviewees problem solving skills
+- knowledges needed for coding interviews
+  - knowledge to code foundations
+  - knowledge of data structures
