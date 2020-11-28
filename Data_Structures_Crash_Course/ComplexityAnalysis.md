@@ -1,0 +1,5 @@
+- space time complexity
+  - time complexity
+    - the better (faster) time complexity is, the better the algorithm is
+  - space complexity
+    - the less memory an algorithm takes, the better the space complexity is, the better the algorithm is

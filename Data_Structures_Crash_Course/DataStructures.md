@@ -1,0 +1,2 @@
+- Data Structures - a way to organize and manage data
+  - collection of data values, relationships, and methods
