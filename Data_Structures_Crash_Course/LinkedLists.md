@@ -4,3 +4,19 @@
   - one memory slot holds value, other memory slot holds the pointer
     - back to back memory slots
     - pointer that points to null address => nullptr
+- get operation
+  - O(n) T
+  - O(1) S
+- set operation
+  - O(n) T
+  - O(1) S
+- initialize operation
+  - O(n) ST
+- copy operation
+  - O(n) ST
+- traverse operation
+  - O(n) T
+  - O(1) S
+- insert operation
+  -
+- delete operation
