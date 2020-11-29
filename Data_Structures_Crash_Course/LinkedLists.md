@@ -18,5 +18,11 @@
   - O(n) T
   - O(1) S
 - insert operation
-  -
+  - O(1)
 - delete operation
+  - O(1)
+- singly and doubly linked lists
+  - singly
+    - only has next pointer
+  - doubly
+    - has next and previous pointers
