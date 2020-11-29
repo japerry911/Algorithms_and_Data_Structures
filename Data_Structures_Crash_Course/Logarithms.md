@@ -1,1 +1,5 @@
 - always assuming base is 2
+- log(16) = 4
+- log(4) = 2
+- log(1) = 0
+- eliminates half of possible values each time through

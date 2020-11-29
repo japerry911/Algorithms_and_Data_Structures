@@ -1,0 +1,29 @@
+- 2 types of arrays
+  - static arrays
+    - fixed number of memory slots
+    - specify the length of array, will never change
+  - dynamic arrays
+    - arrays that can change in size
+    - C++ => vectors, array lists
+    - Python/JavaScript => standard arrays
+- **_ S => Space, T => Time _**
+- get operation (get value by index)
+  - O(1) ST
+- set operation (set value by index) (overwriting value)
+  - O(1) ST
+- initalize array
+  - O(n) ST
+- traverse
+  - O(n) T, O(1) S
+- copy operation
+  - O(n) ST
+- insert operation (insert middle, beginning, or end of array)
+  - Dynamic Arrays
+    - O(1) T for appending
+    - O(n) T for inserting
+    - O(1) S
+    - O(n) when inserting anywhere but at the end of dynamic array
+- pop operation (removing value at the end)
+  - O(1) ST
+- pop/remove anywhere but the end of array
+  - O(n)

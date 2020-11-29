@@ -14,3 +14,4 @@
   - examples:
     - O(n^3 + log(n) + 3n) => n^3
     - O(n^2 + 2n) => n^2
+  - forget about constants too and change to 1
