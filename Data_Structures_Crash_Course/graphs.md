@@ -1,0 +1,4 @@
+- graphs are made up of vertices and edges
+  - edges - arrows that connect vertices (nodes) together
+    - one direction per edge
+  - vertices - nodes that may have values (example: integer values)

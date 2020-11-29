@@ -1,0 +1,17 @@
+- stack - add to top / remove from top down
+  - last in, first out (LIFO)
+    - last element put in is first taken out of stack
+  - implementable with dynamic array
+  - insert operation / delete operation
+    - O(1)
+    - push and pop respectively
+- queue - added to back / removed from front
+  - first in, first out (FIFO)
+    - first element in, and one that has waiting longest is first out
+  - usually implemented with linked list
+  - insert operation / delete operation
+    - O(1)
+    - enqueue and dequeue respectively
+- both operations:
+  - search
+    - O(n) T, O(1) S

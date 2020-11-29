@@ -1,0 +1,6 @@
+- traverse
+  - O(n) T, O(1) S
+- copy
+  - O(n) ST
+- get
+  - O(1) ST
