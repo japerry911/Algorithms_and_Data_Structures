@@ -1,0 +1,15 @@
+- averages:
+  - insert
+    - O(1) T
+    - O(n) S
+  - delete
+    - O(1) T
+    - O(n) S
+  - search
+    - O(1) T
+    - O(n) S
+- worst cases:
+  - O(n) ST
+- list of values
+- hashing function returns index of where key's value is
+  - duplicate indices means that there is a linked list of some kind for the index
