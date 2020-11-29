@@ -1,0 +1,16 @@
+- O(1) => constant
+- O(n) => increases lineary
+- O(n^2) => increases exponentially
+  <br/ >
+- types (fastest to slowest)
+  - O(1)
+  - O(log(n))
+  - O(n)
+  - O(nlog(n))
+  - O(n^2), O(n^3), etc...
+  - O(2^n)
+  - O(n!)
+- drop off everything except biggest
+  - examples:
+    - O(n^3 + log(n) + 3n) => n^3
+    - O(n^2 + 2n) => n^2
