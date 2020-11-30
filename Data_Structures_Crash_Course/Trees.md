@@ -3,3 +3,5 @@
 - binary search tree - BST
 - storing -> O(n) S
 - traverse - O(n) T
+- removing - grabbing smallest node value in the right subtree and have it replaced removed node
+  - in other words, left mode node value in the right subtree
