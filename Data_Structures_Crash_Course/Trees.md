@@ -1,3 +1,5 @@
 - node can only have one parent
 - binary tree => at most each has 2 child nodes (can have 1 or 0 child nodes)
--
+- binary search tree - BST
+- storing -> O(n) S
+- traverse - O(n) T
