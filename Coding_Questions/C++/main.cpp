@@ -30,6 +30,10 @@ int main() {
     root->insert(12);
 
     std::cout << root->right->left->left->value << std::endl; // 12
+
+    root->remove(10);
+
+    std::cout << std::boolalpha << root->contains(10) << std::endl; // false
     std::cout << std::boolalpha << root->contains(15) << std::endl; // true
 
     return 0;
