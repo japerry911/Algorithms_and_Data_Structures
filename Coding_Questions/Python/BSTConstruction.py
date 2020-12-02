@@ -27,6 +27,8 @@ class BST:
         return self
 
     # Solution 1
+    #   Average: O(log(n)) Time | O(n) Space
+    #   Worst: O(n) Time | O(n) Space
     # def insert(self, value):
     #     if value < self.value:
     #         if self.left is not None:
@@ -41,6 +43,8 @@ class BST:
     #
     #     return self
 
+    #   Average: O(log(n)) Time | O(1) Space
+    #   Worst: O(n) Time | O(1) Space
     def contains(self, value):
         current_node = self
         while current_node is not None:
@@ -63,11 +67,14 @@ class BST:
             elif value > current_node.value:
                 parent_node = current_node
                 current_node = current_node.right
+            # found node to remove
             else:
+                # check if it has to children nodes
                 if current_node.left is not None and current_node.right is \
                         not None:
                     # current_node.value = smallest value of right subtree
                     current_node.value = current_node.right.get_min_value()
+                    # remove the smallest value of right subtree
                     current_node.right.remove(current_node.value, current_node)
                 elif parent_node is None:
                     if current_node.left is not None:
@@ -101,10 +108,13 @@ class BST:
 
 """
                         10
-                5               15
-                            13      22
-            2       5           14
-        1  
+                       /  \
+                      5    15
+                     / \   / \
+                    2   5 13  22
+                   /        \
+                  1          14
+          
 """
 root = BST(10)
 root.left = BST(5)
