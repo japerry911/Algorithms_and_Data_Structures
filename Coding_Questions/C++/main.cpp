@@ -5,6 +5,7 @@
 //#include "BSTConstruction.cpp"
 //#include "FindClosestValueInBST.cpp"
 #include "ValidateBST.cpp"
+#include "CheckPalindrome.cpp"
 
 
 int main() {
@@ -52,17 +53,21 @@ int main() {
 //
 //    std::cout << actual << std::endl; // 13
 
-    BST *root = new BST(10);
-    root->left = new BST(5);
-    root->left->left = new BST(2);
-    root->left->left->left = new BST(1);
-    root->left->right = new BST(5);
-    root->right = new BST(15);
-    root->right->left = new BST(13);
-    root->right->left->right = new BST(14);
-    root->right->right = new BST(22);
+//    BST *root = new BST(10);
+//    root->left = new BST(5);
+//    root->left->left = new BST(2);
+//    root->left->left->left = new BST(1);
+//    root->left->right = new BST(5);
+//    root->right = new BST(15);
+//    root->right->left = new BST(13);
+//    root->right->left->right = new BST(14);
+//    root->right->right = new BST(22);
+//
+//    bool actual = validate_bst(root);
+//
+//    std::cout << std::boolalpha << actual << std::endl; // true
 
-    bool actual = validate_bst(root);
+    bool actual = is_palindrome("abcdcba");
 
     std::cout << std::boolalpha << actual << std::endl; // true
 
