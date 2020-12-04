@@ -3,7 +3,8 @@
 #include "TwoNumberSum.cpp"
 #include "ValidateSubsequence.cpp"
 //#include "BSTConstruction.cpp"
-#include "FindClosestValueInBST.cpp"
+//#include "FindClosestValueInBST.cpp"
+#include "ValidateBST.cpp"
 
 
 int main() {
@@ -37,6 +38,20 @@ int main() {
 //    std::cout << std::boolalpha << root->contains(10) << std::endl; // false
 //    std::cout << std::boolalpha << root->contains(15) << std::endl; // true
 
+//    BST *root = new BST(10);
+//    root->left = new BST(5);
+//    root->left->left = new BST(2);
+//    root->left->left->left = new BST(1);
+//    root->left->right = new BST(5);
+//    root->right = new BST(15);
+//    root->right->left = new BST(13);
+//    root->right->left->right = new BST(14);
+//    root->right->right = new BST(22);
+//
+//    int actual = find_closest_value_in_bst(root, 12);
+//
+//    std::cout << actual << std::endl; // 13
+
     BST *root = new BST(10);
     root->left = new BST(5);
     root->left->left = new BST(2);
@@ -47,9 +62,9 @@ int main() {
     root->right->left->right = new BST(14);
     root->right->right = new BST(22);
 
-    int actual = find_closest_value_in_bst(root, 12);
+    bool actual = validate_bst(root);
 
-    std::cout << actual << std::endl; // 13
+    std::cout << std::boolalpha << actual << std::endl; // true
 
     return 0;
 }
