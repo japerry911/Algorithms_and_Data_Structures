@@ -8,6 +8,7 @@
 #include "CheckPalindrome.cpp"
 #include "CaesarCipherEncryptor.cpp"
 #include "BSTTraversal.cpp"
+#include "RunLengthEncoding.cpp"
 
 
 int main() {
@@ -77,7 +78,11 @@ int main() {
 //
 //    std::cout << actual << std::endl; // "fgh"
 
-
+    std::string actual = run_length_encoding("AAAAAAAAAAAAABBCCCCDD");
+    std::cout << actual << std::endl;
+    assert(actual == "9A4A2B4C2D");
+    std::string actual2 = run_length_encoding("aA");
+    assert(actual2 == "1a1A");
 
     return 0;
 }
