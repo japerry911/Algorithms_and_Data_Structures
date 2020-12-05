@@ -6,6 +6,7 @@
 //#include "FindClosestValueInBST.cpp"
 #include "ValidateBST.cpp"
 #include "CheckPalindrome.cpp"
+#include "CaesarCipherEncryptor.cpp"
 
 
 int main() {
@@ -67,9 +68,13 @@ int main() {
 //
 //    std::cout << std::boolalpha << actual << std::endl; // true
 
-    bool actual = is_palindrome("abcdcba");
+//    bool actual = is_palindrome("abcdcba");
+//
+//    std::cout << std::boolalpha << actual << std::endl; // true
 
-    std::cout << std::boolalpha << actual << std::endl; // true
+    std::string actual = caesar_cypher_encryptor("abc", 57);
+
+    std::cout << actual << std::endl; // "fgh"
 
     return 0;
 }
