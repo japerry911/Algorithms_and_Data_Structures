@@ -2,7 +2,7 @@
 
 
 def longest_palindromic_substring(string: str) -> str:
-    longest_palindrome = "a"
+    longest_palindrome = string[0]
 
     for i in range(len(string)):
         for r in range(i + 1, len(string)):
