@@ -11,6 +11,7 @@
 #include "RunLengthEncoding.cpp"
 #include "LongestPalindromicSubstring.cpp"
 #include "GroupAnagrams.cpp"
+#include "LongestSubstringWithoutDuplication.cpp"
 
 
 int main() {
@@ -90,14 +91,18 @@ int main() {
 //    std::cout << actual << std::endl;
 //    assert(actual == "xyzzyx");
 
-    std::vector<std::vector<std::string>> actual = group_anagrams({"yo",  "act", "flop", "tac",
-                                                                   "foo", "cat", "oy",   "olfp"});
-    for (const auto &i : actual) {
-        for (const auto &r : i) {
-            std::cout << r << ", ";
-        }
-        std::cout << std::endl;
-    }
+//    std::vector<std::vector<std::string>> actual = group_anagrams({"yo",  "act", "flop", "tac",
+//                                                                   "foo", "cat", "oy",   "olfp"});
+//    for (const auto &i : actual) {
+//        for (const auto &r : i) {
+//            std::cout << r << ", ";
+//        }
+//        std::cout << std::endl;
+//    }
+
+    std::string actual = longest_substring_without_duplication("clementisacap");
+    std::cout << actual << std::endl;
+    assert(actual == "mentisac");
 
     return 0;
 }
