@@ -10,6 +10,7 @@
 #include "BSTTraversal.cpp"
 #include "RunLengthEncoding.cpp"
 #include "LongestPalindromicSubstring.cpp"
+#include "GroupAnagrams.cpp"
 
 
 int main() {
@@ -85,9 +86,18 @@ int main() {
 //    std::string actual2 = run_length_encoding("aA");
 //    assert(actual2 == "1a1A");
 
-    std::string actual = longest_palindromic_substring("abaxyzzyxf");
-    std::cout << actual << std::endl;
-    assert(actual == "xyzzyx");
+//    std::string actual = longest_palindromic_substring("abaxyzzyxf");
+//    std::cout << actual << std::endl;
+//    assert(actual == "xyzzyx");
+
+    std::vector<std::vector<std::string>> actual = group_anagrams({"yo",  "act", "flop", "tac",
+                                                                   "foo", "cat", "oy",   "olfp"});
+    for (const auto &i : actual) {
+        for (const auto &r : i) {
+            std::cout << r << ", ";
+        }
+        std::cout << std::endl;
+    }
 
     return 0;
 }
