@@ -3,3 +3,4 @@
 - Languages Currently:
   - Python
   - C++
+  - JavaScript
