@@ -127,9 +127,11 @@ root.right.left.right = BST(14)
 root.right.right = BST(22)
 
 root.insert(12)
-print(root.right.left.left.value)
-print(root.value)
-print(root.contains(10))
+print(root.contains(12))  # True
+print(root.contains(10))  # True
+print(root.contains(30))  # False
+
+
 root.remove(10)
-print(root.contains(9000))
+print(root.contains(10))
 print(root.value)
