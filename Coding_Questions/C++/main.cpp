@@ -12,6 +12,7 @@
 #include "LongestPalindromicSubstring.cpp"
 #include "GroupAnagrams.cpp"
 #include "LongestSubstringWithoutDuplication.cpp"
+#include "NthFibonacci.cpp"
 
 
 int main() {
@@ -100,9 +101,12 @@ int main() {
 //        std::cout << std::endl;
 //    }
 
-    std::string actual = longest_substring_without_duplication("clementisacap");
-    std::cout << actual << std::endl;
-    assert(actual == "mentisac");
+//    std::string actual = longest_substring_without_duplication("clementisacap");
+//    std::cout << actual << std::endl;
+//    assert(actual == "mentisac");
+
+    int actual = get_nth_fib(6);
+    std::cout << actual << std::endl; // 5
 
     return 0;
 }
