@@ -30,19 +30,16 @@ class BST:
         return self
 
 
-def min_height_bst(input_list: List[int]) -> BST:
+def min_height_bst(input_list: List[int], bst_tree: BST = None) -> BST:
     middle_index = math.floor(len(input_list) / 2)
+    middle_value = input_list[middle_index]
 
-    bst_tree = BST(input_list[middle_index])
+    if bst_tree is None:
+        bst_tree = BST(middle_value)
 
-    left_end_index = middle_index - 1
-    right_start_index = middle_index + 1
+    left_sub_tree = input_list[0:middle_index]
 
-    left_tree_list = input_list[0:left_end_index + 1]
-    right_tree_list = input_list[right_start_index:]
-
-    print(left_tree_list)
-    print(right_tree_list)
+    right_sub_tree = input_list[middle_index + 1:]
 
 
 # Testing Methods
