@@ -30,16 +30,94 @@ class BST:
         return self
 
 
-def min_height_bst(input_list: List[int], bst_tree: BST = None) -> BST:
-    middle_index = math.floor(len(input_list) / 2)
-    middle_value = input_list[middle_index]
+def min_height_bst(array_main: List[int]) -> BST:
+    return construct_min_height_bst(array_main, 0, len(array_main) - 1)
 
-    if bst_tree is None:
-        bst_tree = BST(middle_value)
 
-    left_sub_tree = input_list[0:middle_index]
+# for 1 and 2 solutions:
+# def min_height_bst(array_main: List[int]) -> BST:
+#     return construct_min_height_bst(array_main, None, 0, len(array_main) - 1)
 
-    right_sub_tree = input_list[middle_index + 1:]
+
+# Solution 3: O(n) Time | O(n) Space => n is the length of the array
+#   ***Same logic as Solution 2, but cleaner code***
+def construct_min_height_bst(array_sub: List[int],
+                             start_index: int,
+                             end_index: int
+                             ) -> BST:
+    if end_index < start_index:
+        return None
+
+    middle_index = (start_index + end_index) // 2
+
+    bst = BST(array_sub[middle_index])
+
+    bst.left = construct_min_height_bst(array_sub,
+                                        start_index,
+                                        middle_index - 1
+                                        )
+    bst.right = construct_min_height_bst(array_sub,
+                                         middle_index + 1,
+                                         end_index
+                                         )
+
+    return bst
+
+
+# # Solution 2: O(n) Time | O(n) Space => n is the length of the array
+# def construct_min_height_bst(array_sub: List[int],
+#                              bst: BST,
+#                              start_index: int ,
+#                              end_index: int
+#                              ) -> BST:
+#     if end_index < start_index:
+#         return
+#
+#     middle_index = (start_index + end_index) // 2
+#
+#     new_bst_node = BST(array_sub[middle_index])
+#     if bst is None:
+#         bst = new_bst_node
+#     else:
+#         if new_bst_node.value < bst.value:
+#             bst.left = new_bst_node
+#             bst = bst.left
+#         else:
+#             bst.right = new_bst_node
+#             bst = bst.right
+#
+#     construct_min_height_bst(array_sub, bst, start_index, middle_index - 1)
+#     construct_min_height_bst(array_sub, bst, middle_index + 1, end_index)
+#
+#     return bst
+
+
+# Solution 1: O(nlog(n)) Time | O(n) Space => n is the length of the array
+# def min_height_bst(array_main: List[int]) -> BST:
+#     return construct_min_height_bst(array_main, None, 0, len(array_main) - 1)
+#
+#
+# # Solution 1: O(nlog(n)) Time | O(n) Space => n is the length of the array
+# def construct_min_height_bst(array_sub: List[int],
+#                              bst: BST,
+#                              start_index: int ,
+#                              end_index: int
+#                              ) -> BST:
+#     if end_index < start_index:
+#         return
+#
+#     middle_index = (start_index + end_index) // 2
+#     value_to_add = array_sub[middle_index]
+#
+#     if bst is None:
+#         bst = BST(value_to_add)
+#     else:
+#         bst.insert(value_to_add)
+#
+#     construct_min_height_bst(array_sub, bst, start_index, middle_index - 1)
+#     construct_min_height_bst(array_sub, bst, middle_index + 1, end_index)
+#
+#     return bst
 
 
 # Testing Methods
@@ -87,9 +165,9 @@ def in_order_traverse(tree1: BST, array1: List[int]) -> List[int]:
 array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
 tree = min_height_bst(array)
 
-# print(validate_bst(tree))  # True
-# print(get_tree_height(tree))  # 4
-#
-# in_order = in_order_traverse(tree, [])
-# print(in_order)  # [1, 2, 5, 7, 10, 13, 14, 15, 22]
-# assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
+print(validate_bst(tree))  # True
+print(get_tree_height(tree))  # 4
+
+in_order = in_order_traverse(tree, [])
+print(in_order)  # [1, 2, 5, 7, 10, 13, 14, 15, 22]
+assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
