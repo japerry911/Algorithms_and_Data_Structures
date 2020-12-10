@@ -7,12 +7,13 @@
 //#include "ValidateBST.cpp"
 #include "CheckPalindrome.cpp"
 #include "CaesarCipherEncryptor.cpp"
-#include "BSTTraversal.cpp"
+//#include "BSTTraversal.cpp"
 #include "RunLengthEncoding.cpp"
 #include "LongestPalindromicSubstring.cpp"
 #include "GroupAnagrams.cpp"
 #include "LongestSubstringWithoutDuplication.cpp"
 #include "NthFibonacci.cpp"
+#include "MinHeightBST.cpp"
 
 
 int main() {
