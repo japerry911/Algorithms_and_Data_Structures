@@ -62,7 +62,7 @@ class Solution:
                                       current_node.right is not None):
             return current_node
         elif parent_node is None and current_node.left is None and \
-            current_node.right is None:
+                current_node.right is None:
             return list()
         else:
             return whole_tree
