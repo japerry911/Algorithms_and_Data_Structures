@@ -16,6 +16,7 @@
 #include "MinHeightBST.cpp"
 #include "BalanceBinarySearchTree.cpp"
 #include "SpiralTraverse.cpp"
+#include "ThreeNumberSum.cpp"
 
 
 int main() {
