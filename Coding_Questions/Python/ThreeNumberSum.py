@@ -18,6 +18,7 @@ from typing import List
 #     return return_list
 
 
+# O(n^2) Time | O(n) Space
 def three_number_sum(array: List[int], target_sum: int) -> List[List[int]]:
     return_list = list()
     array = sorted(array)
