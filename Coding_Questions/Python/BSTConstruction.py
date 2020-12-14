@@ -61,9 +61,11 @@ class BST:
     def remove(self, value, parent_node=None):
         current_node = self
         while current_node is not None:
+            # value is less than the current node's value look left
             if value < current_node.value:
                 parent_node = current_node
                 current_node = current_node.left
+            # value is greater than the current node's value, look right
             elif value > current_node.value:
                 parent_node = current_node
                 current_node = current_node.right
@@ -72,9 +74,10 @@ class BST:
                 # check if it has to children nodes
                 if current_node.left is not None and current_node.right is \
                         not None:
-                    # current_node.value = smallest value of right subtree
+                    # smallest value of right subtree
                     current_node.value = current_node.right.get_min_value()
-                    # remove the smallest value of right subtree
+                    # remove the smallest value of right subtree since it is
+                    #   replacing the original node that we are removing
                     current_node.right.remove(current_node.value, current_node)
                 elif parent_node is None:
                     if current_node.left is not None:
