@@ -2,3 +2,17 @@
   - edges - arrows that connect vertices (nodes) together
     - one direction per edge
   - vertices - nodes that may have values (example: integer values)
+- a collection of nodes that may or may not be connected to each other
+- graph is connected - say this if you can reach any node in the graph
+- edges are represented by arrows pointing one way, or both if the arrow is pointing both ways
+- directed graph - pointed one way
+  - airplane flying to destination
+- undirected graph - pointing both ways
+  - Facebook friendship
+- cycle - 3 or more nodes that go in an infinite loop/cycle
+  - cyclic graph
+    - Wikipage that links from graphs -> data structures -> time/space complexities -> back to graphs
+      - cycles back to graphs
+- depth-first search - deep first, then wider
+- breadth-first search - wider first, then deep
+- both have have Time/Space Complexities of O(V + E) => O(Vertices + Edges)
