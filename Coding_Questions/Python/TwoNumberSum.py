@@ -31,6 +31,7 @@ def two_number_sum(array: List[int], target_sum: int) -> List[int]:
     array.sort()
     left = 0
     right = len(array) - 1
+
     while left < right:
         current_sum = array[left] + array[right]
         if current_sum == target_sum:
