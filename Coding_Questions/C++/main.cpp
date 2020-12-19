@@ -19,6 +19,7 @@
 #include "ThreeNumberSum.cpp"
 #include "Permutations.cpp"
 #include "DepthFirstSearch.cpp"
+#include "BinarySearch.cpp"
 
 
 int main() {
