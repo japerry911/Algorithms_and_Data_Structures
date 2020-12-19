@@ -18,6 +18,7 @@
 #include "SpiralTraverse.cpp"
 #include "ThreeNumberSum.cpp"
 #include "Permutations.cpp"
+#include "DepthFirstSearch.cpp"
 
 
 int main() {
