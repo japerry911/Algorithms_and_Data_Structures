@@ -17,6 +17,7 @@
 #include "BalanceBinarySearchTree.cpp"
 #include "SpiralTraverse.cpp"
 #include "ThreeNumberSum.cpp"
+#include "Permutations.cpp"
 
 
 int main() {
@@ -109,8 +110,17 @@ int main() {
 //    std::cout << actual << std::endl;
 //    assert(actual == "mentisac");
 
-    int actual = get_nth_fib(6);
-    std::cout << actual << std::endl; // 5
+//    int actual = get_nth_fib(6);
+//    std::cout << actual << std::endl; // 5
+
+    std::vector<std::vector<int>> perms = get_permutations({1, 2, 3});
+
+    for (const auto i : perms) {
+        for (const auto j : i) {
+            std::cout << j << " , ";
+        }
+        std::cout << std::endl;
+    }
 
     return 0;
 }
