@@ -5,7 +5,7 @@ from typing import List
 
 class Node:
     def __init__(self, name: str):
-        self.children = []
+        self.children = list()
         self.name = name
 
     def add_child(self, name: str):
