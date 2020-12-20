@@ -9,7 +9,9 @@ class BinaryTree:
 
 
 def invert_binary_tree(tree: BinaryTree) -> BinaryTree:
-    if tree.left is not None and tree.right is not None:
+    if tree is None:
+        return None
+    elif tree.left is not None and tree.right is not None:
         right = tree.right
         tree.right = tree.left
         tree.left = right
