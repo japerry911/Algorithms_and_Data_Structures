@@ -23,6 +23,7 @@
 #include "FindThreeLargestNumbers.cpp"
 #include "BubbleSort.cpp"
 #include "InsertionSort.cpp"
+#include "SelectionSort.cpp"
 
 
 int main() {
