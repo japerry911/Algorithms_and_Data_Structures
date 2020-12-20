@@ -20,6 +20,7 @@
 #include "Permutations.cpp"
 #include "DepthFirstSearch.cpp"
 #include "BinarySearch.cpp"
+#include "FindThreeLargestNumbers.cpp"
 
 
 int main() {
@@ -115,14 +116,21 @@ int main() {
 //    int actual = get_nth_fib(6);
 //    std::cout << actual << std::endl; // 5
 
-    std::vector<std::vector<int>> perms = get_permutations({1, 2, 3});
+//    std::vector<std::vector<int>> perms = get_permutations({1, 2, 3});
+//
+//    for (const auto i : perms) {
+//        for (const auto j : i) {
+//            std::cout << j << " , ";
+//        }
+//        std::cout << std::endl;
+//    }
 
-    for (const auto i : perms) {
-        for (const auto j : i) {
-            std::cout << j << " , ";
-        }
-        std::cout << std::endl;
+    std::vector<int> input1 = {141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7};
+    std::vector<int> actual1 = find_three_largest_numbers(input1);
+    for (const auto i : actual1) {
+        std::cout << i << ", ";
     }
+    std::cout << std::endl;
 
     return 0;
 }
