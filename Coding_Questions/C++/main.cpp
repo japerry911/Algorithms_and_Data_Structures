@@ -21,6 +21,7 @@
 #include "DepthFirstSearch.cpp"
 #include "BinarySearch.cpp"
 #include "FindThreeLargestNumbers.cpp"
+#include "BubbleSort.cpp"
 
 
 int main() {
