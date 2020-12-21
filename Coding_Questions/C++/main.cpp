@@ -24,6 +24,7 @@
 #include "BubbleSort.cpp"
 #include "InsertionSort.cpp"
 #include "SelectionSort.cpp"
+#include "MaxSubsetSumNoAdjacent.cpp"
 
 
 int main() {
@@ -128,12 +129,15 @@ int main() {
 //        std::cout << std::endl;
 //    }
 
-    std::vector<int> input1 = {141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7};
-    std::vector<int> actual1 = find_three_largest_numbers(input1);
-    for (const auto i : actual1) {
-        std::cout << i << ", ";
-    }
-    std::cout << std::endl;
+//    std::vector<int> input1 = {141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7};
+//    std::vector<int> actual1 = find_three_largest_numbers(input1);
+//    for (const auto i : actual1) {
+//        std::cout << i << ", ";
+//    }
+//    std::cout << std::endl;
+
+    int actual = max_subset_sum_no_adjacent({75, 105, 120, 75, 90, 135});
+    std::cout << actual << std::endl;
 
     return 0;
 }
