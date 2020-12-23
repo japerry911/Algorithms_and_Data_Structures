@@ -25,6 +25,7 @@
 #include "InsertionSort.cpp"
 #include "SelectionSort.cpp"
 #include "MaxSubsetSumNoAdjacent.cpp"
+#include "SmallestDifference.cpp"
 
 
 int main() {
