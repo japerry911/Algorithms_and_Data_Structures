@@ -6,18 +6,44 @@ from typing import List
 def valid_ip_addresses(string: str) -> List[str]:
     valid_ips_list = list()
 
-    for f_idx in range(1, 4):
-        for s_idx in range(f_idx + 1, f_idx + 4):
-            for t_idx in range(s_idx + 1, len(string)):
-                potential_ip_address = string[:f_idx] + "." + \
-                                       string[f_idx:s_idx] + "." + \
-                                       string[s_idx:t_idx] + "." + \
-                                       string[t_idx:]
+    for i in range(1, min(len(string), 4)):
+        current_ip_address_parts = ["", "", "", ""]
 
-                if check_valid_ip_address(potential_ip_address) is True:
-                    valid_ips_list.append(potential_ip_address)
+        current_ip_address_parts[0] = string[:i]
+        if not check_valid_ip_section(current_ip_address_parts[0]):
+            continue
+
+        for j in range(i + 1, i + min(len(string) - i, 4)):
+            current_ip_address_parts[1] = string[i:j]
+            if not check_valid_ip_section(current_ip_address_parts[1]):
+                continue
+
+            for k in range(j + 1, j + min(len(string) - j, 4)):
+                current_ip_address_parts[2] = string[j:k]
+                current_ip_address_parts[3] = string[k:]
+
+                if check_valid_ip_section(current_ip_address_parts[2]) and \
+                        check_valid_ip_section(current_ip_address_parts[3]):
+                    valid_ips_list.append(".".join(current_ip_address_parts))
 
     return valid_ips_list
+
+# Solution 1
+# def valid_ip_addresses(string: str) -> List[str]:
+#     valid_ips_list = list()
+#
+#     for f_idx in range(1, 4):
+#         for s_idx in range(f_idx + 1, f_idx + 4):
+#             for t_idx in range(s_idx + 1, len(string)):
+#                 potential_ip_address = string[:f_idx] + "." + \
+#                                        string[f_idx:s_idx] + "." + \
+#                                        string[s_idx:t_idx] + "." + \
+#                                        string[t_idx:]
+#
+#                 if check_valid_ip_address(potential_ip_address) is True:
+#                     valid_ips_list.append(potential_ip_address)
+#
+#     return valid_ips_list
 
 
 def check_valid_ip_address(string: str) -> bool:
