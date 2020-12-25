@@ -26,6 +26,7 @@
 #include "SelectionSort.cpp"
 #include "MaxSubsetSumNoAdjacent.cpp"
 #include "SmallestDifference.cpp"
+#include "ValidIPAddresses.cpp"
 
 
 int main() {
