@@ -28,6 +28,7 @@
 #include "SmallestDifference.cpp"
 #include "ValidIPAddresses.cpp"
 #include "FindDuplicateValue.cpp"
+#include "Powerset.cpp"
 
 
 int main() {
