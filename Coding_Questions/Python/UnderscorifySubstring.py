@@ -14,68 +14,39 @@ def build_underscore_string(locations_list: List[List[int]], string: str) -> str
     for sub_list in locations_list:
         string = string[:sub_list[0] + underscores] + "_" + \
                  string[sub_list[0] +
-                        underscores:sub_list[1] + 1 + underscores] + "_" + \
-                 string[sub_list[1] + 1 + underscores:]
+                        underscores:sub_list[1] + underscores] + "_" + \
+                 string[sub_list[1] + underscores:]
         underscores += 2
     return string
 
 
-def collapse_locations_list(locations_list: List[List[int]]) \
+def collapse_locations_list(locations: List[List[int]]) \
         -> List[List[int]]:
-    collapsed_list = list()
-    previous_sub_list = None
-    idx = -1
-
-    for sub_list in locations_list:
-        if previous_sub_list is None:
-            collapsed_list.append(sub_list)
-            idx += 1
-        elif previous_sub_list[1] + 1 != \
-                sub_list[0]:
-            collapsed_list.append(sub_list)
-            idx += 1
+    if not len(locations):
+        return locations
+    new_locations = [locations[0]]
+    previous = new_locations[0]
+    for i in range(1, len(locations)):
+        current = locations[i]
+        if current[0] <= previous[1]:
+            previous[1] = current[1]
         else:
-            collapsed_list[idx][1] = sub_list[1]
-
-        previous_sub_list = sub_list
-
-    return collapsed_list
+            new_locations.append(current)
+            previous = current
+    return new_locations
 
 
 def build_locations_2d_list(string: str, substring: str) -> List[List[int]]:
-    locations_list = list()
-    sub_idx = 0
+    locations = list()
     start_idx = 0
-    previous = None
-
-    for idx, character in enumerate(string):
-        if previous == substring[sub_idx]:
-            previous = None
-            sub_idx += 1
-            if sub_idx < len(substring) and character == substring[sub_idx]:
-                sub_idx += 1
-                if sub_idx == len(substring):
-                    locations_list.append([start_idx, idx])
-                    start_idx = idx + 1
-                    sub_idx = 0
-                    previous = character
-                continue
-            else:
-                sub_idx -= 1
-
-        if character == substring[sub_idx]:
-            sub_idx += 1
-            if sub_idx == len(substring):
-                locations_list.append([start_idx, idx])
-                start_idx = idx + 1
-                sub_idx = 0
-                previous = character
+    while start_idx < len(string):
+        next_idx = string.find(substring, start_idx)
+        if next_idx != -1:
+            locations.append([next_idx, next_idx + len(substring)])
+            start_idx = next_idx + 1
         else:
-            sub_idx = 0
-            start_idx = idx + 1
-            previous = None
-
-    return locations_list
+            break
+    return locations
 
 
 actual = underscorify_substring(
@@ -93,6 +64,13 @@ expected2 = "_test_this is a _testtest_ to see if _testestest_ it works"
 print(f"EXPECTED:\t{expected2}")
 print("------------------------")
 print(f"ACTUAL:\t\t{actual2}")
-
-assert actual == expected
-assert actual2 == expected2
+actual3 = underscorify_substring(
+    "ttttttttttttttbtttttctatawtatttttastvb", "ttt"
+)
+expected3 = "_tttttttttttttt_b_ttttt_ctatawta_ttttt_astvb"
+print(f"EXPECTED:\t{expected3}")
+print("------------------------")
+print(f"ACTUAL:\t\t{actual3}")
+# assert actual == expected
+# assert actual2 == expected2
+assert actual3 == expected3
