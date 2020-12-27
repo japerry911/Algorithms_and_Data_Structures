@@ -29,6 +29,7 @@
 #include "ValidIPAddresses.cpp"
 #include "FindDuplicateValue.cpp"
 #include "Powerset.cpp"
+#include "UnderscorifySubstring.cpp"
 
 
 int main() {
@@ -140,7 +141,10 @@ int main() {
 //    }
 //    std::cout << std::endl;
 
-    int actual = max_subset_sum_no_adjacent({75, 105, 120, 75, 90, 135});
+//    int actual = max_subset_sum_no_adjacent({75, 105, 120, 75, 90, 135});
+//    std::cout << actual << std::endl;
+
+    std::string actual = underscorify_substring("testthis is a testtest to see if testestest it works", "test");
     std::cout << actual << std::endl;
 
     return 0;
