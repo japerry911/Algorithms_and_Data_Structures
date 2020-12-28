@@ -14,8 +14,8 @@ def is_balanced(self, root: TreeNode) -> bool:
 
         current_status = abs(left - right) <= 1
 
-        return all([current_status, self.is_balanced(root.left),
-                    self.is_balanced(root.right)])
+        return current_status and self.isBalanced(
+            root.left) and self.isBalanced(root.right)
 
 
 def max_depth(self, root: TreeNode) -> int:
