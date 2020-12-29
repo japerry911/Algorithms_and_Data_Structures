@@ -70,11 +70,6 @@ def same_bsts(array1: List[int], array2: List[int]) -> bool:
     right_subtree_values1 = list(filter(lambda x: x >= root_value1, array1))
     right_subtree_values2 = list(filter(lambda x: x >= root_value2, array2))
 
-    if sorted(left_subtree_values1) != sorted(left_subtree_values2):
-        return False
-    if sorted(right_subtree_values1) != sorted(right_subtree_values2):
-        return False
-
     return same_bsts(left_subtree_values1, left_subtree_values2) and \
            same_bsts(right_subtree_values1, right_subtree_values2)
 
