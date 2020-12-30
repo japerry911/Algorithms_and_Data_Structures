@@ -1,6 +1,6 @@
 # ---Permutations---
 
-from typing import List
+from typing import Dict, List
 
 
 # Solution 2: O(n * n!) Time | O(n * n!) Space
@@ -22,8 +22,6 @@ from typing import List
 #
 # def swap(swap_arr: List[int], i: int, j: int):
 #     swap_arr[i], swap_arr[j] = swap_arr[j], swap_arr[i]
-
-from typing import Dict, List
 
 
 def permutations(string: str) -> List[str]:
