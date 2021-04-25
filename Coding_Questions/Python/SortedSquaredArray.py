@@ -2,7 +2,7 @@ from typing import List
 
 
 def sorted_square_array(array: List[int]) -> List[int]:
-    pass
+    return sorted([pow(element, 2) for element in array])
 
 
 a = sorted_square_array([-9, 1, 2, 3, 4, 5, 6, 7, 8])
