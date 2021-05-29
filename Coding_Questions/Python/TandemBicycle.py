@@ -6,7 +6,9 @@ def tandem_bicycle(
         blue_shirt_speeds: List[int],
         fastest: bool
 ) -> int:
-    pass
+    combined = sorted(red_shirt_speeds + blue_shirt_speeds)
+    return sum(combined[len(red_shirt_speeds):]) if fastest is True else \
+        sum(combined[:len(red_shirt_speeds)])
 
 
 r_speeds = [5, 5, 3, 9, 2]
