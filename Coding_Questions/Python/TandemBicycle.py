@@ -11,9 +11,9 @@ def tandem_bicycle(
         sum(combined[:len(red_shirt_speeds)])
 
 
-r_speeds = [5, 5, 3, 9, 2]
-b_speeds = [3, 6, 7, 2, 1]
+r_speeds = [1, 2, 1, 9, 12, 3]
+b_speeds = [3, 3, 4, 6, 1, 2]
 fastest_bool = True
 output = tandem_bicycle(r_speeds, b_speeds, fastest_bool)
-print(f"{output} == 32")
-assert output == 32
+print(f"{output} == 10")
+assert output == 10
