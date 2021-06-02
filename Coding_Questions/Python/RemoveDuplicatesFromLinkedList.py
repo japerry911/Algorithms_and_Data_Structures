@@ -25,7 +25,20 @@ class LinkedList:
 
 
 def remove_duplicates_from_linked_list(linked_list: LinkedList) -> LinkedList:
-    return linked_list
+    current = linked_list
+    values_dictionary = dict()
+
+    return_linked_list_array = list()
+    return_linked_list = LinkedList(current.value)
+    values_dictionary[current.value] = True
+
+    while current.next is not None:
+        current = current.next
+        if current.value not in values_dictionary:
+            values_dictionary[current.value] = True
+            return_linked_list_array.append(current.value)
+
+    return return_linked_list.add_many(return_linked_list_array)
 
 
 test = LinkedList(1).add_many([1, 3, 4, 4, 4, 5, 6, 6])
