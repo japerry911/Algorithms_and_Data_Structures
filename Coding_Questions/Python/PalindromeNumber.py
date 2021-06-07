@@ -7,7 +7,20 @@ def is_palindrome(x: int) -> bool:
     :returns: True or False indicating if it is Palindromic
     :rtype: bool
     """
-    return False
+    if x < 0:
+        return False
+    elif 0 < x < 10:
+        return True
+
+    number = x
+    reverse = 0
+
+    while number > 0:
+        last_digit = number % 10
+        reverse = (reverse * 10) + last_digit
+        number //= 10
+
+    return reverse == x
 
 
 def test_is_palindrome():
