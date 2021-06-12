@@ -3,7 +3,20 @@ from typing import List
 
 
 def longest_common_prefix(strs: List[str]) -> str:
-    pass
+    longest_prefix = ""
+    current_idx = 0
+    min_str_length = min(map(len, strs))
+
+    while current_idx < min_str_length:
+        for idx, string in enumerate(strs):
+            if idx == 0:
+                longest_prefix += string[current_idx]
+            elif longest_prefix != string[:current_idx + 1]:
+                return longest_prefix[:current_idx]
+
+        current_idx += 1
+
+    return longest_prefix[:current_idx]
 
 
 def test_longest_common_prefix():
