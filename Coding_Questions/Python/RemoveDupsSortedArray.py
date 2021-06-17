@@ -4,7 +4,27 @@ import pytest
 
 
 def remove_duplicates(nums: List[int]) -> int:
-    return 1
+    """removes duplicates from a sorted array with moving them to front and
+        not removing any elements and returning length of unique elements
+    :param List[int] nums: sorted array input
+    :returns: number representing the length of the unique array
+    :rtype: int
+    """
+    look_up_dict = dict()
+    current_iterate_idx = 0
+    current_nums_idx = 0
+
+    while current_iterate_idx < len(nums):
+        if nums[current_iterate_idx] in look_up_dict.keys():
+            current_iterate_idx += 1
+            continue
+
+        look_up_dict[nums[current_iterate_idx]] = True
+        nums[current_nums_idx] = nums[current_iterate_idx]
+        current_nums_idx += 1
+        current_iterate_idx += 1
+
+    return current_nums_idx
 
 
 def test_remove_duplicates():
