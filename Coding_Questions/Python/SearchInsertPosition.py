@@ -4,12 +4,18 @@ import pytest
 
 
 def search_insert(nums: List[int], target: int) -> int:
-    pass
+    for idx, i in enumerate(nums):
+        if i == target:
+            return idx
+        elif i > target:
+            return idx
+
+    return len(nums)
 
 
 def test_search_insert():
     print("search_insert([1, 3, 5, 6], 5) == 2")
-    assert search_insert([1, 2, 3, 5, 6], 5) == 2
+    assert search_insert([1, 3, 5, 6], 5) == 2
 
     print("search_insert([1, 3, 5, 6], 2) == 1")
     assert search_insert([1, 3, 5, 6], 2) == 1
