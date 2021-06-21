@@ -2,10 +2,7 @@ import pytest
 
 
 def str_str(haystack: str, needle: str) -> int:
-    if needle == "":
-        return 0
-
-    return haystack.find(needle)
+    return 0 if needle == "" else haystack.find(needle)
 
 
 def test_str_str():
