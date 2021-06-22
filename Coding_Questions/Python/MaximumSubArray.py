@@ -10,8 +10,13 @@ def max_sub_array(nums: List[int]) -> int:
     :returns: total largest sum of contiguous subarray
     :rtype: int
     """
-    pass
+    idx = 1
 
+    while idx < len(nums):
+        nums[idx] = max(nums[idx - 1] + nums[idx], nums[idx])
+        idx += 1
+
+    return max(nums)
 
 # Too Slow
 # def max_sub_array(nums: List[int]) -> int:
