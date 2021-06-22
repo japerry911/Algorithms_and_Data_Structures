@@ -4,6 +4,12 @@ import pytest
 
 
 def search_insert(nums: List[int], target: int) -> int:
+    """returns index for target number in sorted nums input List
+    :param List[int] nums: input list of integers
+    :param int target: inputted number that is being inserted into sorted List
+    :returns: the index where the target will be placed
+    :rtype: int
+    """
     for idx, i in enumerate(nums):
         if i == target:
             return idx

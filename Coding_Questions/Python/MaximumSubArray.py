@@ -4,7 +4,12 @@ import pytest
 
 
 def max_sub_array(nums: List[int]) -> int:
-    pass
+    """Finds the contiguous subarray which has the largest sum (must contain
+        at least 1 number) and returns its sum
+    :param List[int] nums: list of integer inputs
+    :returns: total largest sum of contiguous subarray
+    :rtype: int
+    """
 
 
 def test_max_sub_array():
