@@ -6,6 +6,12 @@ class TreeNode:
 
 
 def is_same_tree(p: TreeNode, q: TreeNode) -> bool:
+    """checks to see if both input Binary Trees are the same
+    :param TreeNode p: input Binary Tree
+    :param TreeNode q: input Binary Tree
+    :returns: returns boolean saying whether they are the same trees or not
+    :rtype: bool
+    """
     if p is None or q is None:
         return p == q
 
