@@ -12,7 +12,13 @@ def shuffle(nums: List[int], n: int) -> List[int]:
     :returns: Return the array in the form [x1,y1,x2,y2,...,xn,yn].
     :rtype: List[int]
     """
-    pass
+    return_list = list()
+    y_idx_base = n
+    for x_idx in range(n):
+        return_list.append(nums[x_idx])
+        return_list.append(nums[y_idx_base + x_idx])
+
+    return return_list
 
 
 def test_shuffle():
