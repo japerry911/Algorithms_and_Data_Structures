@@ -4,6 +4,14 @@ import pytest
 
 
 def shuffle(nums: List[int], n: int) -> List[int]:
+    """Given the array nums consisting of 2n elements in the form
+        [x1,x2,...,xn,y1,y2,...,yn]. Return the array in the form
+        [x1,y1,x2,y2,...,xn,yn].
+    :param List[int] nums: list of integers input that will be shuffled
+    :param int n: nums length == 2n
+    :returns: Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+    :rtype: List[int]
+    """
     pass
 
 
