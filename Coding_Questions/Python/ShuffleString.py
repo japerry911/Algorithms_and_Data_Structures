@@ -4,7 +4,18 @@ import pytest
 
 
 def restore_string(s: str, indices: List[int]) -> str:
-    pass
+    """Given a list of indices and a shuffled string, restore the string
+    :param str s: the inputted shuffled string
+    :param List[int] indices: the inputted indices of the un-shuffled string
+    :returns: the restored un-shuffled string
+    :rtype: str
+    """
+    restored_list = [""] * len(indices)
+
+    for i in range(len(indices)):
+        restored_list[indices[i]] = s[i]
+
+    return "".join(restored_list)
 
 
 def test_restore_string():
