@@ -4,6 +4,11 @@ import pytest
 
 
 def is_monotonic(array: List[int]) -> bool:
+    """evaluates a List and tells if it is monotonic or not
+    :param List[int] array: input list that is being evaluated
+    :returns: True or False, which tells if input is monotonic or not
+    :rtype: bool
+    """
     pass
 
 
