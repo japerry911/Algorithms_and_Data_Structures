@@ -5,13 +5,52 @@ import pytest
 
 def longest_peak(array: List[int]) -> int:
     """takes in an array of integers, and determines the longest peak, a peak
-        is when an array is strictly increase for at least 3 values and then
-        decreases
+        is when an array is strictly increase and then strictly
+        decreases for at least 3 values
     :param List[int] array: the input array of integers
     :returns: the length of the longest peak
     :rtype: int
     """
-    pass
+    if len(array) < 3:
+        return 0
+
+    longest_peak_length = 0
+    first_element = array.pop(0)
+    prev_element = array.pop(0)
+    is_ready = False
+    is_increasing = None
+    current_peak_length = 1
+    if first_element < prev_element:
+        current_peak_length = 2
+        is_increasing = True
+        is_ready = True
+
+    for element in array:
+        if element == prev_element:
+            is_increasing = None
+            current_peak_length = 1
+        elif element > prev_element:
+            is_ready = True
+
+            if is_increasing or is_increasing is None:
+                is_increasing = True
+                current_peak_length += 1
+            else:
+                is_increasing = None
+                if current_peak_length > longest_peak_length and is_ready:
+                    longest_peak_length = current_peak_length
+                current_peak_length = 2
+                is_ready = False
+        else:
+            if current_peak_length > 1:
+                is_increasing = False
+                current_peak_length += 1
+                if current_peak_length > longest_peak_length and is_ready:
+                    longest_peak_length = current_peak_length
+
+        prev_element = element
+
+    return longest_peak_length
 
 
 def test_longest_peak():
