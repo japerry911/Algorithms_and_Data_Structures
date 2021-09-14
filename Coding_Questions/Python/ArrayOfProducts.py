@@ -4,6 +4,12 @@ import pytest
 
 
 def array_of_products(array: List[int]) -> List[int]:
+    """Calculate array of products for inputted array
+    :param List[int] array: the input integer array
+    :returns: array of products of every number in array multiplied except
+        current index
+    :rtype: List[int]
+    """
     pass
 
 
