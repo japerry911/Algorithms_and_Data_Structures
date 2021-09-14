@@ -10,7 +10,17 @@ def array_of_products(array: List[int]) -> List[int]:
         current index
     :rtype: List[int]
     """
-    pass
+    return_array = list()
+
+    for idx_1, _ in enumerate(array):
+        current_value = 1
+        for idx_2, element in enumerate(array):
+            if idx_1 == idx_2:
+                continue
+            current_value *= element
+        return_array.append(current_value)
+
+    return return_array
 
 
 def test_array_of_products():
