@@ -1,4 +1,4 @@
-from typing import List
+from typing import Dict, List
 
 import pytest
 
@@ -7,7 +7,32 @@ def tournament_winner(
         competitions: List[List[str]],
         results: List[int]
 ) -> str:
-    pass
+    """calculates which competitor wins the most matches, where results says
+        who wins
+    :param List[List[str]] competitions: the matches that take place, in this
+        format -> [[home-team, away-team], ...]
+    :param List[int] results: the results array of each match, a 1 says home
+        team wins, a 0 says away team wins
+    :returns: winning team's name
+    :rtype: str
+    """
+    score_dict = dict()
+    zipped_results_list = list(zip(competitions, results))
+
+    for teams, result in zipped_results_list:
+        if result == 0:
+            score_dict = add_score_to_dict(score_dict, teams[1])
+        else:
+            score_dict = add_score_to_dict(score_dict, teams[0])
+
+    return max(score_dict, key=score_dict.get)
+
+
+def add_score_to_dict(score_dict: Dict[str, int], team: str) -> Dict[str, int]:
+    if team not in score_dict:
+        score_dict[team] = 0
+    score_dict[team] += 1
+    return score_dict
 
 
 def test_tournament_winner():
