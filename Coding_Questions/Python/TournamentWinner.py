@@ -73,7 +73,7 @@ def test_tournament_winner():
     ]
     input_3b = [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0]
     expected_output_3 = "AlgoMasters"
-    assert tournament_winner(input_3a, input_3b)
+    assert tournament_winner(input_3a, input_3b) == expected_output_3
 
 
 pytest.main(["TournamentWinner"])
