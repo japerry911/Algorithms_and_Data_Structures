@@ -4,3 +4,4 @@
   - Python
   - C++
   - JavaScript
+  - SQL
