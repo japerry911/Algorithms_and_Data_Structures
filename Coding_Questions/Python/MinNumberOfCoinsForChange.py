@@ -11,7 +11,18 @@ def min_number_of_coins_for_change(n: int, denoms: List) -> int:
     :rtype: int
     :returns: smallest number of coins needed to make change
     """
-    pass
+    num_of_coins = [float("inf") for _ in range(n + 1)]
+    num_of_coins[0] = 0
+
+    for denom in denoms:
+        for amount in range(len(num_of_coins)):
+            if denom <= amount:
+                num_of_coins[amount] = min(
+                    num_of_coins[amount],
+                    1 + num_of_coins[amount - denom]
+                )
+
+    return int(num_of_coins[n]) if num_of_coins[n] != float("inf") else -1
 
 
 def test_min_number_of_coins_for_change():
@@ -61,7 +72,7 @@ def test_min_number_of_coins_for_change():
     n_test = 7
     print(f"min({n_test}, {denoms_test}) == 3")
     result = min_number_of_coins_for_change(n_test, denoms_test)
-    assert result == 7
+    assert result == -1
 
 
 pytest.main(["MinNumberOfCoinsForChange.py"])
