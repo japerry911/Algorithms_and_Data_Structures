@@ -8,7 +8,20 @@ def reverse_words_in_string(string: str) -> str:
     :rtype: str
     :returns: reversed string
     """
-    pass
+    reversed_list = list()
+    reversed_word = list()
+
+    for char in string:
+        if char == ' ':
+            reversed_list.insert(0, "".join(reversed_word.copy()))
+            reversed_list.insert(0, char)
+            reversed_word = list()
+        else:
+            reversed_word.append(char)
+    else:
+        reversed_list.insert(0, "".join(reversed_word.copy()))
+
+    return "".join(reversed_list)
 
 
 def test_reverse_words_in_string():
