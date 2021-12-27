@@ -10,7 +10,22 @@ def has_single_cycle(array: List[int]) -> bool:
     :rtype: bool
     :returns: true or false, whether it did a have a single cycle or not
     """
-    pass
+    num_elements_visited = 0
+    current_idx = 0
+
+    while num_elements_visited < len(array):
+        if num_elements_visited > 0 and current_idx == 0:
+            return False
+        num_elements_visited += 1
+        current_idx = get_next_idx(current_idx, array)
+
+    return current_idx == 0
+
+
+def get_next_idx(current_idx: int, array: List[int])  -> int:
+    jmp = array[current_idx]
+    next_idx = (current_idx + jmp) % len(array)
+    return next_idx if next_idx >= 0 else next_idx + len(array)
 
 
 def test_has_single_cycle():
