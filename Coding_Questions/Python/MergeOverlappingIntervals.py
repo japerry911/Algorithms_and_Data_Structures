@@ -11,7 +11,32 @@ def merge_overlapping_intervals(intervals: List[List]) -> List[List]:
     :rtype: List[List]
     :returns: any overlapping intervals
     """
-    pass
+    intervals.sort(key=lambda x: x[0])
+
+    overlapping_return_list = list()
+    merge_interval = None
+
+    for start_idx in range(len(intervals)):
+        next_idx = start_idx + 1
+        start_interval = intervals[start_idx]
+
+        if merge_interval is None:
+            merge_interval = start_interval
+
+        if next_idx < len(intervals):
+            # not the end of intervals
+            next_interval = intervals[next_idx]
+
+            if merge_interval[1] < next_interval[0]:
+                overlapping_return_list.append(merge_interval)
+                merge_interval = None
+            elif next_interval[1] > merge_interval[1]:
+                merge_interval[1] = next_interval[1]
+        else:
+            # end of the intervals
+            overlapping_return_list.append(merge_interval)
+
+    return overlapping_return_list
 
 
 def test_merge_overlapping_intervals():
